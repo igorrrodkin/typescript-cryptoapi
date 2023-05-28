@@ -9,14 +9,14 @@ export const loadContent = async (client: pg.Client) => {
   )}`;
   client.query(queryAverage);
 
-  const contentCoinMarket = await coinMarketData();
-  const queryCoinMarket: string = `CREATE TABLE IF NOT EXIST cryptodata.coinmarket("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.coinmarket("currency", "price", "date_time") VALUES\n ${getFormatValues(
-    contentCoinMarket
-  )}`;
-  client.query(queryCoinMarket);
+  // const contentCoinMarket = await coinMarketData();
+  // const queryCoinMarket: string = `CREATE TABLE IF NOT EXIST cryptodata.coinmarket("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.coinmarket("currency", "price", "date_time") VALUES\n ${getFormatValues(
+  //   contentCoinMarket
+  // )}`;
+  // client.query(queryCoinMarket);
 
   const contentCoinbase = await coinbaseData();
-  const queryCoinbase: string = `CREAT TABLE IF NOT EXIST cryptodata.coinbase("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.coinbase("currency", "price", "date_time") VALUES\n ${getFormatValues(
+  const queryCoinbase: string = `CREAT TABLE IF NOT EXIST cryptodata.COINBASE("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.coinbase("currency", "price", "date_time") VALUES\n ${getFormatValues(
     contentCoinbase
   )}`;
   client.query(queryCoinbase);
