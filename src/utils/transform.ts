@@ -24,6 +24,7 @@ export const getAllConnectorsData = async () => {
       }
     }
   }
+  console.log("ABCD")
   const averagePrice: { [key: string]: number } = {};
   for (let item of Object.entries(arrPrices)) {
     let average =
