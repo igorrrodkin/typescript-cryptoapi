@@ -16,7 +16,7 @@ export const loadContent = async (client: pg.Client) => {
   client.query(queryCoinMarket);
 
   const contentCoinbase = await coinbaseData();
-  const queryCoinbase: string = `CREATE TABLE IF NOT EXIST cryptodata.coinbase("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.coinbase("currency", "price", "date_time") VALUES\n ${getFormatValues(
+  const queryCoinbase: string = `CREAT TABLE IF NOT EXIST cryptodata.coinbase("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.coinbase("currency", "price", "date_time") VALUES\n ${getFormatValues(
     contentCoinbase
   )}`;
   client.query(queryCoinbase);
