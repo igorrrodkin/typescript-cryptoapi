@@ -21,17 +21,17 @@ export const loadContent = async (client: pg.Client) => {
   )}`;
   client.query(queryCoinbase);
 
-  const contentCoinStats = await coinstatsData();
-  const queryCoinStats: string = `CREATE TABLE IF NOT EXIST cryptodata.coinstats("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.coinstats("currency", "price", "date_time") VALUES\n ${getFormatValues(
-    contentCoinStats
-  )}`;
-  client.query(queryCoinStats);
+  // const contentCoinStats = await coinstatsData();
+  // const queryCoinStats: string = `CREATE TABLE IF NOT EXIST cryptodata.coinstats("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.coinstats("currency", "price", "date_time") VALUES\n ${getFormatValues(
+  //   contentCoinStats
+  // )}`;
+  // client.query(queryCoinStats);
 
-  const contentPaprika = await paprikaData();
-  const queryPaprika: string = `CREATE TABLE IF NOT EXIST cryptodata.paprika("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.paprika("currency", "price", "date_time") VALUES\n ${getFormatValues(
-    contentPaprika
-  )}`;
-  client.query(queryPaprika);
+  // const contentPaprika = await paprikaData();
+  // const queryPaprika: string = `CREATE TABLE IF NOT EXIST cryptodata.paprika("currency" TEXT, "price" NUMERIC, "date_time" TIMESTAMP);\n INSERT INTO cryptodata.paprika("currency", "price", "date_time") VALUES\n ${getFormatValues(
+  //   contentPaprika
+  // )}`;
+  // client.query(queryPaprika);
 };
 
 const getFormatValues = (content: Object[]): string => {

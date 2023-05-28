@@ -7,10 +7,10 @@ import {
 
 export const getAllConnectorsData = async () => {
   const data = await Promise.all([
-    coinMarketData(),
+    // coinMarketData(),
     coinstatsData(),
-    coinbaseData(),
-    paprikaData(),
+    // coinbaseData(),
+    // paprikaData(),
   ]);
   const arrPrices: { [key: string]: number[] } = {};
   for (let content of data) {
