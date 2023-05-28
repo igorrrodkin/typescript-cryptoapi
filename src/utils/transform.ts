@@ -9,8 +9,8 @@ export const getAllConnectorsData = async () => {
   const data = await Promise.all([
     coinMarketData(),
     coinstatsData(),
-    coinbaseData(),
-    paprikaData(),
+    // coinbaseData(),
+    // paprikaData(),
   ]);
   const arrPrices: { [key: string]: number[] } = {};
   for (let content of data) {
@@ -24,6 +24,7 @@ export const getAllConnectorsData = async () => {
       }
     }
   }
+  console.log("ABCD")
   const averagePrice: { [key: string]: number } = {};
   for (let item of Object.entries(arrPrices)) {
     let average =
