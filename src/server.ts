@@ -14,6 +14,6 @@ app.listen(process.env.PORT_APP, () => {
   cron.schedule("*/5 * * * *", (): void => {
     const client = dbConn();
     loadContent(client);
-    console.log("New content load", new Date());
+    console.log("New content loaded", new Date());
   });
 });
